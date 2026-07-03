@@ -13,10 +13,10 @@ export const site = {
   availability: true,
   availabilityNote: "Open to new projects & roles",
   // Get a free key at https://web3forms.com (register with the email above).
-  web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY", // [REPLACE] required for the contact form
+  web3formsKey: "eb03c1b8-adcb-4802-b3f3-21dfa7f3c8fe", // equired for the contact form
   socials: {
     linkedin: "https://www.linkedin.com/in/radhika-g-33b172249/",
-    github: "https://github.com/", // [REPLACE] add GitHub profile
+    github: "https://github.com/radhikagondaliya/", // add GitHub profile
   },
 };
 
@@ -30,7 +30,7 @@ export const nav = [
 
 export const heroStats = [
   { value: "7+", label: "Years experience" },
-  { value: "10+", label: "Apps shipped end-to-end" },
+  { value: "25+", label: "Website & Apps shipped end-to-end" },
   { value: "9", label: "Industry domains" },
 ];
 
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     name: "aiKat",
     category: "AI · Marketing SaaS",
     problem:
-      "Social platforms reward volume - but producing 30 on-brand videos for a campaign took marketing teams days of specialist work.",
+      "Social platforms reward volume -  but producing 30 on-brand videos for a campaign took marketing teams days of specialist work.",
     role: "Full Stack Developer",
     stack: ["Next.js", "TypeScript", "Node.js", "AI APIs"],
     outcome: "An AI workflow that turns one brief into 30 social-ready videos in ~30 minutes.",
