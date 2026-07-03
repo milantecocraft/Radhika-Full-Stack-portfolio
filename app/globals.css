@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  @apply bg-base text-ink font-sans antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider2 text-mint;
+  }
+  .eyebrow::before {
+    content: "//";
+    @apply text-mint/60;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-mint transition-transform duration-500;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    @apply scale-x-100;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium
+      transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-mint/60
+      focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+  }
+  .btn-primary {
+    @apply btn bg-mint text-base hover:-translate-y-0.5 hover:shadow-glowmint;
+  }
+  .btn-ghost {
+    @apply btn border border-edge bg-panel/60 text-ink hover:-translate-y-0.5 hover:border-mint/40;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-edge bg-panel px-4 py-3 text-sm text-ink
+      placeholder:text-muted/50 transition-all duration-300
+      focus:border-mint/50 focus:outline-none focus:ring-2 focus:ring-mint/20;
+  }
+
+  .card {
+    @apply rounded-xl2 border border-edge bg-panel shadow-card;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .text-accent {
+    @apply bg-gradient-to-r from-mint to-cyan bg-clip-text text-transparent;
+  }
+  /* Faint blueprint grid for section backdrops. */
+  .bg-grid {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(75% 60% at 50% 35%, #000 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(75% 60% at 50% 35%, #000 30%, transparent 100%);
+  }
+}
